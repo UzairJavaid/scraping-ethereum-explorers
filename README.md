@@ -12,7 +12,7 @@ https://www.blockchain.com/
 ```
 Primarily, I opted to use blockchain.com since it didn't give any HTTP error.
 
-# installation and Usage
+# installation
 You need to install Scrapy first before running the spider. Please see the link on how-to-install Scrapy:
 ```
 https://docs.scrapy.org/en/latest/intro/install.html
