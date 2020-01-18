@@ -10,7 +10,7 @@ The crawler is coded for n number of addresses, which enables it to crawl as man
 https://blockchair.com/
 https://www.blockchain.com/
 ```
-Primarily, I opted to use blockchain.com since it didn't give any HTTP error.
+Primarily, I opted to use blockchain.com since it didn't give any HTTP error. The file dataEthereum.csv contains the data that I extracted for the keys.csv using blockchair. 
 
 # installation
 You need to install Scrapy first before running the spider. Please see the link on how-to-install Scrapy:
