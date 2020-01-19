@@ -17,30 +17,23 @@ class CcsSpider(scrapy.Spider):
     
     start_urls = start
 
+# #########################transactionCount##########################
     def parse(self, response):
-        a = response.css('li.block__item')
-        b = a.css('span.not span::text').get()
-        c = a.css('span.not span.grey::text').get()
-        d = b + c
+        a = response.css('ul.block__ul')
         yield {
-            'feeEther': d
+            # 'url': response.url,
+            'countTX': a.css('li.block__item span::text')[13].get()
         }
 
+# #########################inCall,outCall##########################
     # def parse(self, response):
     #     a = response.css('ul.block__ul')
     #     yield {
-    #         'inTX': a.css('span a::text')[1].get()
+    #         'inCall': a.css('span a::text')[0].get() #inCall
+    #         # 'outCall': a.css('span a::text')[1].get() #outCall
     #     }
 
-    # def parse(self, response):
-    #     a = response.css('div.grey')
-    #     b = a.css('span::text')[5].get()
-    #     c = a.css('span::text')[6].get()
-    #     d = b + c
-    #     yield {
-    #         'outEther': d
-    #     }
-
+# #########################inEther,outEther##########################
     # def parse(self, response):
     #     a = response.css('div.grey')
     #     b = a.css('span::text')[0].get()
@@ -51,11 +44,25 @@ class CcsSpider(scrapy.Spider):
     #     }
 
     # def parse(self, response):
-    #     a = response.css('ul.block__ul')
+    #     a = response.css('div.grey')
+    #     b = a.css('span::text')[5].get()
+    #     c = a.css('span::text')[6].get()
+    #     d = b + c
     #     yield {
-    #         'countTX': a.css('li.block__item span::text')[13].get()
+    #         'outEther': d
     #     }
     
+# #########################feeEther##########################
+    # def parse(self, response):
+    #     a = response.css('li.block__item')
+    #     b = a.css('span.not span::text').get()
+    #     c = a.css('span.not span.grey::text').get()
+    #     d = b + c
+    #     yield {
+    #         'feeEther': d
+    #     }
+
+##################################################################
     # def parse(self, response):
     #     a = response.css('div.sc-8sty72-0')
     #     yield {
